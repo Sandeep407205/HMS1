@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 
-public class room {
+ class room {
    private int RoomID ;
    private String features ;
    private String Description ;
    private double Price;
-   ArrayList<Amenities> amenities = new ArrayList<>();
+//   ArrayList<Amenities> amenities = new ArrayList<>();
 
     public room() {
     }
@@ -17,60 +17,43 @@ public class room {
         this.Price = Price;
     }
 
-    public double getPrice() {
-        return Price;
-    }
+     public room(int RoomID) {
+        this.RoomID= RoomID;
+     }
 
-    public void setPrice(double Price) {
-        this.Price = Price;
-    }
+     public String getFeatures() {
+         return features;
+     }
 
-    @Override
-    public String toString() {
-        return "room{" +
-                "RoomID=" + RoomID +
-                ", features='" + features + '\'' +
-                ", Description='" + Description + '\'' +
-                ", Price=" + Price +
-                '}';
-    }
-//    amenities tori = new amenities();
+     public void setFeatures(String features) {
+         this.features = features;
+     }
 
+     public String getDescription() {
+         return Description;
+     }
 
-}
-    class deluxe_queen_room extends room{
+     public void setDescription(String description) {
+         Description = description;
+     }
 
-        @Override
-        public void setPrice(double Price) {
-            super.setPrice(Price);
-        }
-    }
+     public double getPrice() {
+         return Price;
+     }
 
-        class deluxe_two_queen extends room{
-            @Override
-            public void setPrice(double Price) {
-                super.setPrice(Price);
-            }
-        }
+     public void setPrice(double price) {
+         Price = price;
+     }
 
-        class deluxe_spa extends room{
-            @Override
-            public void setPrice(double Price) {
-                super.setPrice(Price);
-            }
-        }
+     @Override
+     public String toString() {
 
-        class family_suite extends room{
-            @Override
-            public void setPrice(double Price) {
-                super.setPrice(Price);
-            }
-        }
+         return "room{" +
+                 "RoomID=" + RoomID +
+                 ", features='" + features + '\'' +
+                 ", Description='" + Description + '\'' +
+                 ", Price=" + Price +
+                 '}';
 
-        class family_suite_two_bed extends room{
-            @Override
-            public void setPrice(double Price) {
-                super.setPrice(Price);
-            }
-        }
-
+     }
+ }

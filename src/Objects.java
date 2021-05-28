@@ -1,3 +1,4 @@
 public class Objects {
-    deluxe_queen_room[] dlq = new deluxe_queen_room[10];
+    deluxeQueen[] deluxeQueen = new deluxeQueen[10];
+    customer[] customers = new customer[100];
 }
