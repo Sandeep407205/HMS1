@@ -1,8 +1,16 @@
 import java.util.ArrayList;
 
 public class Main {
+
     static Objects hotel_ob = new Objects();
+    static room test = new room();
+
+
     public static void main(String[] args) {
+
+        int rn,am;
+        String name;
+        String status;
 
 
 
@@ -19,8 +27,23 @@ public class Main {
                             "\n3:Deluxe Spa" +
                             "\n4:Family Suite" +
                             "\n5:Family suite Two ");
-                    book(value1);
+                    rn = Utils.enterInteger("\nenter room number");
+                    name = Utils.enterString("enter your name");
+                    status = Utils.enterString("enter your status");
+                    while (true) {
+                        am = Utils.enterInteger("Do you want to add amenities?\n1:Netflix\t2:Wifi\t3:Exit");
+                        switch (am) {
+                            case 1:
+                                 test.amenities.add(new Amenities(am,"Netflix"));
+                                break;
 
+                        }
+                        if(am==3){
+                            break;
+                        }
+
+                    }
+                    book(rn,name,status, test.amenities);
                     break;
                 case 2:
                     System.out.println(hotel_ob.deluxeQueen[1]);
@@ -38,23 +61,22 @@ public class Main {
     }
 
 
-    public static void book(int sel) {
+    public static void book(int rn,String name,String status,ArrayList<Amenities> amenities) {
+        customer custom;
 
-        int rn;
-        String name;
-        String status;
-        rn = Utils.enterInteger("\nenter room number");
-        name = Utils.enterString("enter your name");
-        status = Utils.enterString("enter your status");
-        hotel_ob.deluxeQueen[rn]= new deluxeQueen(rn,sel);
-        hotel_ob.customers[rn]=new customer(name,status);
+
+
+        custom=new customer(name,status);
+        hotel_ob.deluxeQueen[rn]= new deluxeQueen(rn,rn,custom,amenities);
+//        System.out.println(amenities);
         System.out.println(hotel_ob.deluxeQueen[rn]);
-        System.out.println(hotel_ob.customers[rn]);
+//        System.out.println(custom);
 
 
 //
 
     }
+
 }
 
 

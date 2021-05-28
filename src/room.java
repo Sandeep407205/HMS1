@@ -5,20 +5,24 @@ import java.util.ArrayList;
    private String features ;
    private String Description ;
    private double Price;
-//   ArrayList<Amenities> amenities = new ArrayList<>();
+  ArrayList<Amenities> amenities = new ArrayList<>();
 
     public room() {
     }
 
-    public room(int RoomID, String features, String description, double price) {
-        this.RoomID = RoomID;
-        this.features = features;
-        this.Description = Description;
-        this.Price = Price;
-    }
+     public room(int roomID, String features, String Description, double Price, ArrayList<Amenities> amenities) {
+         RoomID = roomID;
+         this.features = features;
+         this.Description = Description;
+         this.Price = Price;
+         this.amenities = amenities;
+     }
 
      public room(int RoomID) {
         this.RoomID= RoomID;
+     }
+
+     public room(int roomID, ArrayList<Amenities> amenities) {
      }
 
      public String getFeatures() {
@@ -45,15 +49,18 @@ import java.util.ArrayList;
          Price = price;
      }
 
+     public void setAmenities(ArrayList<Amenities> amenities) {
+         this.amenities = amenities;
+     }
+
      @Override
      public String toString() {
-
          return "room{" +
                  "RoomID=" + RoomID +
                  ", features='" + features + '\'' +
                  ", Description='" + Description + '\'' +
                  ", Price=" + Price +
+                 ", amenities=" + amenities +
                  '}';
-
      }
  }

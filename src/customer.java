@@ -9,7 +9,7 @@ public class customer {
     public customer(String name, String status) {
         this.name = name;
         this.status = status;
-//        this.discount = discount;
+        this.discount = 10;
     }
 
     @Override

@@ -1,19 +1,22 @@
+import java.util.ArrayList;
+
 public class deluxeQueen extends room {
+    private customer data;
     private int bed;
 
     public deluxeQueen() {
-
-
     }
 
-    public deluxeQueen(int RoomID,int bed) {
-        super(RoomID);
+    public deluxeQueen(int RoomID, int bed, customer data, ArrayList<Amenities> amenities) {
+        super(RoomID,amenities);
         this.bed = bed;
+        this.data = data;
         switch (RoomID){
             case 1:
                 setFeatures("deluxe queen");
                 setDescription("good room");
                 setPrice(200);
+                setAmenities(amenities);
                 break;
             case 2:
                 setFeatures("world");
@@ -34,6 +37,7 @@ public class deluxeQueen extends room {
 //        System.out.println(getFeatures());
         return "deluxeQueen{" +
                 "bed=" + bed +
+                "amenities"+amenities+
                 '}';
     }
 }

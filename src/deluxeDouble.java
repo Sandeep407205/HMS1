@@ -4,7 +4,7 @@ public class deluxeDouble extends  room{
     public deluxeDouble() {
     }
 
-    public deluxeDouble(int RoomID, String features, String description, double price) {
-        super(RoomID, features, description, price);
-    }
+//    public deluxeDouble(int RoomID, String features, String description, double price) {
+//        super(RoomID, features, description, price);
+//    }
 }
