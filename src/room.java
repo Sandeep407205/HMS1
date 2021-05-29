@@ -5,22 +5,24 @@ import java.util.ArrayList;
    private String features ;
    private String Description ;
    private double Price;
-  ArrayList<Amenities> amenities = new ArrayList<>();
+   ArrayList<Amenities> amenities = new ArrayList<>();
+
+
 
     public room() {
     }
 
-     public room(int roomID, String features, String Description, double Price, ArrayList<Amenities> amenities) {
+     public room(int roomID, String features, String Description, double Price) {
          RoomID = roomID;
          this.features = features;
          this.Description = Description;
          this.Price = Price;
-         this.amenities = amenities;
+
      }
 
-     public room(int RoomID) {
-        this.RoomID= RoomID;
-     }
+//     public room(int RoomID) {
+//        this.RoomID= RoomID;
+//     }
 
      public room(int roomID, ArrayList<Amenities> amenities) {
      }
@@ -48,10 +50,16 @@ import java.util.ArrayList;
      public void setPrice(double price) {
          Price = price;
      }
-
-     public void setAmenities(ArrayList<Amenities> amenities) {
-         this.amenities = amenities;
+     public ArrayList<Amenities> getAmenities() {
+         System.out.println("room"+amenities);
+         return this.amenities;
      }
+     public void setAmenities(ArrayList<Amenities> amenitiess) {
+         System.out.println("set"+amenitiess);
+         this.amenities= amenitiess;
+     }
+
+
 
      @Override
      public String toString() {

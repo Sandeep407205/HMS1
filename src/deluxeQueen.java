@@ -3,41 +3,57 @@ import java.util.ArrayList;
 public class deluxeQueen extends room {
     private customer data;
     private int bed;
+    private ArrayList<Amenities> amen;
+//    room rm = new room();
+
 
     public deluxeQueen() {
     }
 
-    public deluxeQueen(int RoomID, int bed, customer data, ArrayList<Amenities> amenities) {
-        super(RoomID,amenities);
+    public deluxeQueen(int RoomID, int bed, customer data, ArrayList<Amenities> amen) {
+        super(RoomID,amen);
         this.bed = bed;
         this.data = data;
+        this.amen = amen;
+
         switch (RoomID){
             case 1:
                 setFeatures("deluxe queen");
                 setDescription("good room");
                 setPrice(200);
-                setAmenities(amenities);
+                setAmenities(amen);
                 break;
             case 2:
                 setFeatures("world");
     }
 
 
-
-//    public deluxeQueen(int RoomID, String features, String description, double price, int bed) {
-//        super(RoomID, features, description, price);
-//        this.bed = bed;
-//
-//        }
    }
+
+
+
+    @Override
+    public void setPrice(double price) {
+        super.setPrice(price+50+amen.get(0).getPrice());
+//        super.setAmenities(amenities);
+
+//        System.out.println("hello"+getAmenities());
+        System.out.println(getPrice());
+
+
+
+
+    }
 
     @Override
     public String toString() {
-        System.out.println(super.toString());
-//        System.out.println(getFeatures());
+       System.out.println(super.toString());
+//        System.out.println("love"+amenities);
+
         return "deluxeQueen{" +
                 "bed=" + bed +
-                "amenities"+amenities+
+                "amenities"+data+
                 '}';
     }
+
 }

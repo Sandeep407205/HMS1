@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Main {
 
     static Objects hotel_ob = new Objects();
-    static room test = new room();
+    static room test = new deluxeQueen();
 
 
     public static void main(String[] args) {
